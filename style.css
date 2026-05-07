@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
@@ -86,6 +86,107 @@ header {
     margin-top: 20px;
 }
 
+/* --- Facilities Carousel Styles --- */
+.facilities-page {
+    padding-top: 100px; 
+    background-color: #4a3b4e; 
+    color: white;
+}
+.facilities-header {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;  
+    justify-content: center;
+    text-align: center;     
+    margin-bottom: 50px;
+    width: 100%;           
+}
+
+.facilities-header h1 {
+    font-size: 3rem;
+    color: #f7a8a8;
+    margin-bottom: 10px;
+}
+
+.facilities-header p {
+    max-width: 600px; 
+}
+
+
+.carousel-slider {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory; 
+    scroll-behavior: smooth;
+    gap: 30px;
+    padding: 20px 50px 40px; 
+    scrollbar-width: thin; 
+    scrollbar-color: #f7a8a8 transparent;
+}
+
+.carousel-slider::-webkit-scrollbar {
+    height: 8px;
+}
+
+.carousel-slider::-webkit-scrollbar-thumb {
+    background: #f7a8a8;
+    border-radius: 10px;
+}
+
+/* --- Individual Slide Styling --- */
+.facility-slide {
+    flex: 0 0 450px; /* Fixed width for slides */
+    scroll-snap-align: center; /* Snap to center of viewport */
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 25px;
+    overflow: hidden;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.facility-slide:hover {
+    transform: translateY(-10px);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.facility-slide img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.slide-content {
+    padding: 30px;
+}
+
+.slide-content h2 {
+    color: #f7a8a8;
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+}
+
+.slide-content p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+.scroll-hint {
+    text-align: center;
+    color: #f7a8a8;
+    margin-top: 10px;
+    font-style: italic;
+    font-size: 1rem;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .facility-slide {
+        flex: 0 0 85%; /* Cards take up most of the screen on mobile */
+    }
+    .carousel-slider {
+        padding: 20px;
+    }
+}
 
 .facilities {
     padding: 80px 10%;
@@ -267,12 +368,23 @@ header {
 }
 
 /* Booking Form*/
+/* Center the Section Title */
+.section-title {
+    text-align: center; 
+    margin-bottom: 30px;
+}
+
+/* Center the Booking Form */
 .booking-form {
-    max-width: 600px;
+    max-width: 900px;
+    width: 100%; /* Ensures it doesn't collapse */
     background: rgba(255, 255, 255, 0.05);
     padding: 40px;
     border-radius: 20px;
-    margin-left: auto; 
+
+    /* These two lines together are the "No-Flexbox" centering trick */
+    display: block; 
+    margin: 0 auto !important; 
 }
 
 .form-group {
@@ -293,7 +405,10 @@ header {
     font-size: 1rem;
 }
 
+
+
 /* The Submit Button */
+
 .submit-btn {
     width: 100%;
     padding: 15px;
@@ -415,7 +530,7 @@ header {
     outline-offset: 2px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 820px) {
 
     .navbar {
         flex-direction: column;
@@ -833,4 +948,76 @@ footer p {
 .footer-links a:hover {
     opacity: 1;
     color: #f7a8a8;        
+}
+
+/* --- Automatic Light Mode Detection --- */
+@media (prefers-color-scheme: light) {
+    body {
+        background-color: #f9f7f9; /* Soft off-white */
+        color: #4a3b4e; /* Deep purple text */
+    }
+
+    .facilities-page,
+    .facilities-container,
+    .booking-container,
+    .contact-container {
+        background-color: #f9f7f9;
+        color: #4a3b4e;
+    }
+
+    /* Cards & Components */
+    .facility-slide,
+    .facility-card,
+    .sub-facility,
+    .activity-item,
+    .p-card,
+    .booking-form,
+    .info-item {
+        background: #ffffff; 
+        border: 1px solid rgba(74, 59, 78, 0.1);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        color: #4a3b4e;
+    }
+
+    /* Interactive Hover States */
+    .facility-slide:hover,
+    .activity-item:hover,
+    .p-card:hover {
+        background: #fffafa;
+        border-color: #f7a8a8;
+    }
+
+    /* Form Fields */
+    .form-group input,
+    .contact-form textarea {
+        background-color: #ffffff;
+        border: 1px solid rgba(74, 59, 78, 0.2);
+        color: #4a3b4e;
+    }
+
+    /* Package Buttons */
+    .package-btn {
+        background-color: #ffffff;
+        color: #4a3b4e;
+        border: 1px solid #f7a8a8;
+    }
+
+    .package-btn.active {
+        background-color: #f7a8a8;
+        color: #4a3b4e;
+    }
+
+    /* Map and Footer */
+    .map-wrapper iframe {
+        filter: none; /* Remove the dark inversion */
+    }
+
+    footer {
+        background-color: #eee;
+        color: #4a3b4e;
+    }
+
+    .footer-links a {
+        color: #4a3b4e;
+    }
 }

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://twinkletoezz.github.io/Loving-Test/sitemap.xml
