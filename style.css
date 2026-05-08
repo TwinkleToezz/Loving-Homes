@@ -86,7 +86,7 @@ header {
     margin-top: 20px;
 }
 
-/* --- Facilities Carousel Styles --- */
+/*  Facilities Carousel Styles  */
 .facilities-page {
     padding-top: 100px; 
     background-color: #4a3b4e; 
@@ -133,10 +133,10 @@ header {
     border-radius: 10px;
 }
 
-/* --- Individual Slide Styling --- */
+/*  Individual Slide Styling  */
 .facility-slide {
-    flex: 0 0 450px; /* Fixed width for slides */
-    scroll-snap-align: center; /* Snap to center of viewport */
+    flex: 0 0 450px;
+    scroll-snap-align: center; 
     background: rgba(255, 255, 255, 0.05);
     border-radius: 25px;
     overflow: hidden;
@@ -181,7 +181,7 @@ header {
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
     .facility-slide {
-        flex: 0 0 85%; /* Cards take up most of the screen on mobile */
+        flex: 0 0 85%;
     }
     .carousel-slider {
         padding: 20px;
@@ -266,7 +266,6 @@ header {
     box-shadow: 0 10px 30px rgba(0,0,0,0.2);
 }
 
-/* Aligning the Text Content */
 .facility-info {
     flex: 1;
     max-width: 650px;    
@@ -311,6 +310,11 @@ header {
 
 
 /* Booking Page Layout */
+.booking-header {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 0px;
+}
 .booking-container {
     padding: 60px 8%; 
     max-width: 1400px;
@@ -368,21 +372,17 @@ header {
 }
 
 /* Booking Form*/
-/* Center the Section Title */
 .section-title {
     text-align: center; 
     margin-bottom: 30px;
 }
 
-/* Center the Booking Form */
 .booking-form {
     max-width: 900px;
     width: 100%; /* Ensures it doesn't collapse */
     background: rgba(255, 255, 255, 0.05);
     padding: 40px;
     border-radius: 20px;
-
-    /* These two lines together are the "No-Flexbox" centering trick */
     display: block; 
     margin: 0 auto !important; 
 }
@@ -641,7 +641,7 @@ header {
     }
 }
 
-/* --- CONTACT PAGE MOBILE OVERRIDES --- */
+/*  CONTACT PAGE MOBILE OVERRIDES  */
 @media (max-width: 768px) {
     
     .contact-container {
@@ -670,7 +670,6 @@ header {
         gap: 10px;
     }
 
-    /* Form Adjustments */
     .contact-form-section {
         order: 1; 
     }
@@ -697,7 +696,7 @@ header {
     }
 }
 
-/* --- BOOKING PAGE MOBILE OVERRIDES --- */
+/*  BOOKING PAGE MOBILE OVERRIDES  */
 @media (max-width: 768px) {
 
     .booking-container {
@@ -755,13 +754,14 @@ header {
     }
 }
 
-/* --- Package Grid Styling --- */
+/*  Package Grid Styling  */
 .package-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
     padding: 20px 0;
 }
+
 
 .p-card {
     background: rgba(255, 255, 255, 0.05);
@@ -776,7 +776,6 @@ header {
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
 }
 
-/* Image Header with Overlay */
 .p-img-header {
     position: relative;
     width: 100%;
@@ -842,7 +841,7 @@ header {
     }
 }
 
-/* --- Activity Tracker Styles --- */
+/*  Activity Tracker Styles  */
 .activity-tracker {
     margin-top: 50px;
     padding: 20px 0;
@@ -950,11 +949,11 @@ footer p {
     color: #f7a8a8;        
 }
 
-/* --- Automatic Light Mode Detection --- */
+/*Automatic Light Mode Detection*/
 @media (prefers-color-scheme: light) {
     body {
-        background-color: #f9f7f9; /* Soft off-white */
-        color: #4a3b4e; /* Deep purple text */
+        background-color: #f9f7f9; 
+        color: #4a3b4e
     }
 
     .facilities-page,
